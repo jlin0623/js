@@ -1,0 +1,32 @@
+<script>
+    let a = 10,b= 3;
+    if ( a >= 0 && b <= 3) {
+        document.write(`OK: ${a} / ${b}`);
+    } else {
+        document.write(`XX: ${a} / ${b}`);
+    }
+
+    // 先拿原值進去運算 才會做加減
+    if ( a-- >= 0 && b++ <= 3) {
+        document.write(`OK: ${a} / ${b}`);
+    } else {
+        document.write(`XX: ${a} / ${b}`);
+    }
+
+    // 有減沒加 因為前面的判斷是false了 所以遇到&&直接跳出 所以這樣只有a被減
+    if ( --a >= 0 && ++b <= 3) {
+        document.write(`OK: ${a} / ${b}`);
+    } else {
+        document.write(`XX: ${a} / ${b}`);
+    }
+
+    // 都有運算 因為前面是false 遇到|| 還有機會轉成true
+    if ( --a >= 0 && ++b <= 3) {
+        document.write(`OK: ${a} / ${b}`);
+    } else {
+        document.write(`XX: ${a} / ${b}`);
+    }
+
+    // & 兩邊都執行
+    // && 會先判斷 如果有上述情況可能提早跳出
+</script>

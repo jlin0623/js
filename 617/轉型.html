@@ -1,0 +1,25 @@
+<script>
+    let a = 123;
+    document.write(typeof(a) + "<br>");
+    // 轉型
+    a = String(a);
+    document.write(typeof(a) + `${a}` +"<br>");
+    
+    let b = true;
+    document.write(typeof(b) + "<br>");
+    // 轉型
+    b = String(b);
+    document.write(typeof(b) + `${b}` +"<br>");
+
+    let c = '123';
+    document.write(typeof(c) + "<br>");
+    // 轉型 非數字會報錯=NaN 空字串為0
+    c = Number(c);
+    document.write(typeof(c) + `${c}` +"<br>");
+
+    let d = true;
+    document.write(typeof(d) + "<br>");
+    // 轉型 true = 1 false = 0
+    d = Number(d);
+    document.write(typeof(d) + `${d}` +"<br>");
+</script>
