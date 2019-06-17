@@ -1,0 +1,36 @@
+<script>
+    let a = [1,2,3,4];
+    document.write(typeof(a) + "<br>");
+
+    // 陣列由0開始
+    document.write(a[0] + "<br>");
+
+    a[100] = 10;
+    document.write(a[100] + "<br>");
+    document.write(a.length + "<br>");
+
+    //即使長度變長了 但還是undefined
+    document.write(a[87] + "<br>");
+
+    let p1, p2, p3, p4, p5, p6;
+    p1 = p2 = p3 = p4 = p5 = p6 = 0;
+
+    for (let i = 0; i < 100; i++) {
+        let number = parseInt((Math.random() * 6) + 1);
+        if (number == 1) {
+            p1++;
+        } else if (number == 2){
+            p2++;
+        } else if (number == 3){
+            p3++;
+        } else if (number == 4){
+            p4++;
+        } else if (number == 5){
+            p5++;
+        } else{
+            p6++;
+        }
+    }
+
+    document.write(`${p1} , ${p2} , ${p3} , ${p4} , ${p5} , ${p6}`);
+</script>

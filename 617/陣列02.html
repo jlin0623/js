@@ -1,0 +1,13 @@
+<script>
+    let a = [1,2,3,4,5];
+    a[10] = 11;
+    for (let i = 0; i < a.length; i++) {
+        document.write(a[i] + "<br>");
+    }
+    document.write("<hr>")
+
+    // 若中間沒有值的話 則會跳過
+    for (let i in a) {
+        document.write(a[i] + "<br>");
+    }
+</script>  
