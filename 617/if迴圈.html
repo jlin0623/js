@@ -1,0 +1,23 @@
+<script>
+    let i = 0;
+    // 這裡的i 是區域變數 生命週期僅在這個回圈內
+    for (let i = 0; i <10; i++) {
+        document.write(i + "<br>");
+    }
+
+    // 用外面變數的i 則會影響
+    for (; i <10; i++) {
+        document.write(i + "<br>");
+    }
+
+    // 通過裡面來數 則可以不用第三個作為
+    for (; i < 0; ) {
+        document.write(i++ + "<br>");
+    }
+
+    // for (進來先做 ; 布林判斷 ; 收尾)
+    // for (function() ; 判斷 ; function())
+    
+    document.writeln("");
+    document.write(i);
+</script>

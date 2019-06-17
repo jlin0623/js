@@ -1,19 +1,68 @@
 <script>
-    let a = 10;
-
+    let month = parseInt(Math.random()*12)+1;
+    document.write(month + "month ")
+    let b = 10;
     // 遇到break則脫離
-    switch (a) {
-        case 1:
-            document.write("a");
+    // js 可以用變數當case
+    // 進入之後 若沒有遇到break則繼續往下做
+    // switch 是以全等於 (===) 做判斷依據   
+  
+
+    // switch (a) {
+    //     case 1:
+    //         document.write("31");
+    //         break;
+    //     case 2:
+    //         document.write("28");
+    //         break;
+    //     case 3:
+    //         document.write("31");
+    //         break;
+    //     case 4:
+    //         document.write("30");
+    //         break;
+    //     case 5:
+    //         document.write("31");
+    //         break;
+    //     case 6:
+    //         document.write("30");
+    //         break;
+    //     case 7:
+    //         document.write("31");
+    //         break;
+    //     case 8:
+    //         document.write("31");
+    //         break;
+    //     case 9:
+    //         document.write("30");
+    //         break;
+    //     case b:
+    //         document.write("31");
+    //         break;
+    //     case 11:
+    //         document.write("30");
+    //         break;
+    //     case 12:
+    //         document.write("31");
+    //         break;
+    //     default:
+    //         document.write("騙肖ㄟ");
+    //         break;
+    // }
+
+    //縮排
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:    
+            document.write("31");
             break;
-        case 10:
-            document.write("b");
+        case 9: case 4: case 6: case 11:
+            document.write("30");
             break;
-        case 100:
-            document.write("c");
+        case 2: 
+            document.write("28");
             break;
         default:
-            document.write("e");
+            document.write("騙肖ㄟ");
             break;
     }
 </script>
