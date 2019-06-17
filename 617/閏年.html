@@ -1,0 +1,26 @@
+<script>
+    
+    function judge() {
+        let year = document.getElementById("number").value;
+        let leap400 = parseInt(year) % 400;
+        let leap100 = parseInt(year) % 100;
+        let leap4 = parseInt(year) % 4;
+        console.log(leap400);
+        console.log(leap100);
+        console.log(leap4);
+        if (leap400 == 0) {
+            alert("閏年");
+        } else if (leap100 == 0) {
+            alert("不是閏年");
+        } else if (leap4 == 0) {
+            alert("閏年");
+        } else {
+            alert("不是閏年");
+        }
+    }
+    // 三元運算式
+    // $布林?true:false
+</script>
+<input type="number" id="number">
+<input type="button" onclick="judge()">
+<span id="result"></span>

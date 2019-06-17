@@ -1,0 +1,25 @@
+<script>
+    function doCal() {
+        let x = document.getElementById("x").value;
+        let y = document.getElementById("y").value;
+        // let 數字 會是number parseInt可以轉整數
+        x = parseInt(x);
+        y = parseInt(y);
+        let a = parseInt(x / y);
+        let z = (x % y);
+
+        result.innerHTML  = a + "......" + z;
+    }
+</script>
+<input type="number" id="x">
+<select id="change">
+    <option value="">+</option>
+    <option value="">-</option>
+    <option value="">*</option>
+    <option value="">/</option>
+</select>
+<input type="number" id="y">
+<input type="button" value="=" onclick="doCal()">
+<span id="result"></span>
+
+
