@@ -3,15 +3,39 @@
     let answer = createAnswer(3);
     console.log(answer);
     let log = '';
+    let times = 0;
     function doGuess() {
-        let guess = document.getElementById("guess").value;
+        times++;
+        let guessElement = document.getElementById('guess');
+        let guess = guessElement.value;
         let result = checkAB(answer, guess);
-
-        alert(result)
+        if (result == 3 + 'A0B') {
+            alert('過關~');
+            reset();
+        } else if (times == 9) {
+            alert('菜G 答案是' + answer);
+            reset();
+        } else {
+            alert(result);
+        }
+        log += guess + "會得到" + result + "<br>";
+        document.getElementById('log').innerHTML = log;
+        guess.value = '';
+        guessElement.focus();
+        console.log(times);
     }
 
     function reset() {
-
+        let guessElement = document.getElementById('guess');
+        let guess = guessElement.value;
+        let result = checkAB(answer, guess);
+        if (!confirm('重玩?')) return;
+        answer = createAnswer(3);
+        console.log(answer)
+        let log = '';
+        document.getElementById('log').innerHTML = log;
+        guess.value = '';
+        guessElement.focus();
     }
 
 </script>
@@ -21,5 +45,10 @@
 <input type="number" id="guess">
 <input type="button" onclick="doGuess()" value="檢查">
 <input type="button" onclick="reset()" value="重玩">
+<select id='num'>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+</select>
 <hr>
 <div id="log"></div>
