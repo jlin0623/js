@@ -1,0 +1,25 @@
+<script src="apijs.js"></script>
+<script>
+    let answer = createAnswer(3);
+    console.log(answer);
+    let log = '';
+    function doGuess() {
+        let guess = document.getElementById("guess").value;
+        let result = checkAB(answer, guess);
+
+        alert(result)
+    }
+
+    function reset() {
+
+    }
+
+</script>
+
+<h1> 猜數字遊戲</h1>
+<hr>
+<input type="number" id="guess">
+<input type="button" onclick="doGuess()" value="檢查">
+<input type="button" onclick="reset()" value="重玩">
+<hr>
+<div id="log"></div>

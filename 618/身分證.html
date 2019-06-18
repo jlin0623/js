@@ -1,0 +1,15 @@
+<script src="apijs.js"></script>
+<script>
+        function ckId() {
+        let id = document.getElementById("id").value;
+        let isRight = checkId(id);
+        if ( ! isRight) {
+            alert("無效");
+        } else {
+            alert("有效");
+        }
+    }
+</script>
+
+<input type="text" id="id">
+<input type="button" value="驗證" onclick="ckId()">
