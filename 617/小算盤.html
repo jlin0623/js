@@ -1,5 +1,11 @@
 <script>
     function doCal() {
+        let op = document.getElementById("op");
+        let opVal = op.selectedIndex;
+        alert(opVal)
+
+
+
         let x = document.getElementById("x").value;
         let y = document.getElementById("y").value;
         // let 數字 會是number parseInt可以轉整數
@@ -12,7 +18,7 @@
     }
 </script>
 <input type="number" id="x">
-<select id="change">
+<select id="op">
     <option value="">+</option>
     <option value="">-</option>
     <option value="">*</option>

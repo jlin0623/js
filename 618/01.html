@@ -1,0 +1,16 @@
+<script>
+    let a = [0, 1, 2, 3, 4, 5];
+    for (let i=0; i < a.length; i++) {
+        document.write(a[i] + "<br>");
+    }
+    document.write("<hr>");
+    // 可以避開undefined
+    for (let i in a) {
+        document.write(a[i] + "<br>");
+    }
+    document.write("<hr>");
+    // 不在乎index值可以直接這樣做
+    for (let v of a) {
+        document.write(v + "<br>");
+    }
+</script>

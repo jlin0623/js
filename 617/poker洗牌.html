@@ -1,0 +1,21 @@
+<script>
+    let poker = [];
+    for (let i = 0; i < 52; i++) {
+        let rand = parseInt(Math.random()*52);
+        let isReapeat = false;
+        for (let j=0; j<1; j++) {
+            if (poker[j] ==rand) {
+                isReapeat = true;
+                break;
+            }
+        }
+        if (isReapeat) {
+            i--;
+            continue;
+        }
+        poker[i] = rand;
+    }
+    for (let i in poker) {
+        document.write(poker[i] + "<br>")
+    }
+</script>

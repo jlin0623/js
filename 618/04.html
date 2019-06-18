@@ -1,0 +1,26 @@
+<script>
+    // 傳遞陣列進來
+    function sayYa(ns) {
+        for (let name of ns) {
+            document.write(`Ya ${name}<br>`);
+        }
+    }
+
+    // 預設值
+    function sayYaV2(name = 'Wolrd') {
+        document.write(`Ya ${name}<br>`);
+    }
+
+    // 多個值
+    function sayYaV3(...names) {
+        for (let name of names) {
+            document.write(`Ya ${name}<br>`);
+        }
+    }
+
+    let names = ["brab", "wqef", "wfwef"];
+    sayYa(names);
+    sayYaV2();
+    sayYaV2("123");
+    sayYaV3("123","V");
+</script>
