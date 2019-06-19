@@ -1,0 +1,23 @@
+<script>
+    function doCal() {
+        let op = document.getElementById("number");
+        let opArray = op.selectedIndex;
+        let opVal = op.options[opArray].value;
+        alert(opVal)
+    }
+    // let op = document.getElementById('number').selectedindex;
+    // let oa = op.selectedIndex;
+    // let ob = op.options[oa].value;
+    // console.log(op);
+
+    // function check() {
+    //     console.log(op);
+    // }
+</script>
+<select id="number">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+</select>
+<input type="button" value="123" onclick="doCal()">
