@@ -1,7 +1,7 @@
 // 畫面載入時隱藏輸入框
 $(document).ready(function () {
-    $("#char").hide();
-    $("#bg").hide();
+    // $("#char").hide();
+    // $("#bg").hide();
 });
 
 // 定義預設的選項，並且隨著使用者變化的時候變動
@@ -9,6 +9,10 @@ let option = "Random";
 
 // 隨使用者變換的值
 function doChange() {
+    // 先預設關起來 
+    $("#char").hide();
+    $("#bg").hide();
+
     // 當更換的時候先清空原本的
     result.innerHTML = "";
 
@@ -93,14 +97,13 @@ function makeFakeId() {
     if (option === "Both") {
         doByTwo();
     }
-    
 }
 
 function doRandom() {
     let first = getUpperCharacter();
     let second = String(getRandom(1, 2));
     let end = getRandom(10000000, 99999999);
-    
+
     let id = first + second + end;
     if (checkId(id)) {
         return result.innerHTML = id;
