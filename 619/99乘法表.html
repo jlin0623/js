@@ -1,0 +1,21 @@
+<script src="idontknow.js"></script>
+
+<table border="1" width="100%">
+    <script>
+        for (let i = 0; i <= 9; i++) {
+            document.write("<tr>");
+            for (let k = 0; k <= 10; k++) {
+                let num = k + i * 10;
+                if (confirm(num) == true) {
+                    document.write("<td><font color='red'>" + `${num}` + "</font>");
+                }
+                if (confirm(num) == false) {
+                    document.write("<td>");
+                    document.writeln(`${num}`);
+                }
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        } 
+    </script>
+</table>

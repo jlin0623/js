@@ -1,9 +1,3 @@
-// 畫面載入時隱藏輸入框
-$(document).ready(function () {
-    // $("#char").hide();
-    // $("#bg").hide();
-});
-
 // 定義預設的選項，並且隨著使用者變化的時候變動
 let option = "Random";
 
