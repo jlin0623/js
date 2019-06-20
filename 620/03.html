@@ -1,0 +1,29 @@
+<!-- brad 29 -->
+<script>
+    let body = document.createElement('body');
+    document.body = body;
+
+    let table = document.createElement('table');
+    document.body.appendChild(table);
+    // 老師說不行 但我行= = 下面
+    // table.border = '1';
+
+    table.setAttribute('border', '1');
+    table.setAttribute('width', '100%')
+
+    for (let k = 1; k < 9; k++) {
+        let tr = document.createElement('tr');
+        table.appendChild(tr);
+        for (let i = 1; i < 10; i++) {
+            let td = document.createElement('td');
+            tr.appendChild(td);
+            let newi = i + k * 10;
+            for (let j = 1; j < 10; j++) {
+                let td = document.createElement('td');
+                tr.appendChild(td);
+                tr.innerHTML += `${newi} x ${j} = ${newi * j} <br>`
+            }
+        }
+    }
+
+</script>

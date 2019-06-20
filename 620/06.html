@@ -1,0 +1,30 @@
+<!-- brad32 -->
+<script>
+    function test() {
+        let n = parseInt(Math.random() * 101);
+        document.write(`${n}<br>`);
+        // try 做甚麼 
+        // catch 發生問題做甚麼 
+        // finally 一定要做
+        try {
+            test2(n);
+            document.write("test,OK<br>");
+            return;
+        } catch (e) {
+            document.write("nothing<br>");
+            return;
+        } finally {
+            document.write("finally<br>");
+        }
+
+        document.write("test here");
+    }
+    function test2(a) {
+        if (a >= 60) {
+            document.write("test2,OK<br>");
+        } else {
+            throw "ooop!";
+        }
+    }
+</script>
+<input type="button" value="test" onclick="test()">

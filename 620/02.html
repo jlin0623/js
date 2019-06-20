@@ -38,7 +38,21 @@
             templi = li;
         }
     }
+    // 移除第二個子項目
     ul.removeChild(templi);
+
     let line2 = line.cloneNode();
-    body.appendChild(line2)
+    body.appendChild(line2);
+
+    let ul2 = ul.cloneNode();
+    body.appendChild(ul2);
+    for (let i = 0; i < 3; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = `第 ${i + 1} 個項目內容資料`;
+        ul.appendChild(li)
+
+        if (i ==  1) {
+            templi = li;
+        }
+    }
 </script>
