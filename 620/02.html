@@ -1,0 +1,44 @@
+<script>
+    let body = document.createElement('body');
+    document.body = body;
+
+    let head = document.createElement('h1');
+    head.innerHTML = 'brad big company';
+    document.body.appendChild(head);
+
+    let h1text = document.createTextNode("hello,world");
+    head.appendChild(h1text);
+
+    document.body.appendChild(head);
+    h1text.textContent = "123";
+
+    let line = document.createElement('hr');
+    document.body.appendChild(line);
+
+    let ul = document.createElement('ul');
+    document.body.appendChild(ul);
+    // let li1 = document.createElement('li');
+    // let li2 = document.createElement('li');
+    // let li3 = document.createElement('li');
+    // li1.innerHTML = "123";
+    // li2.innerHTML = "456";
+    // li3.innerHTML = "789";
+    // ul.appendChild(li1);
+    // ul.appendChild(li2);
+    // ul.appendChild(li3);
+
+    // 用for迴圈做
+    let templi;
+    for (let i = 0; i < 3; i++) {
+        let li = document.createElement('li');
+        li.innerHTML = `第 ${i + 1} 個項目內容資料`;
+        ul.appendChild(li)
+
+        if (i ==  1) {
+            templi = li;
+        }
+    }
+    ul.removeChild(templi);
+    let line2 = line.cloneNode();
+    body.appendChild(line2)
+</script>

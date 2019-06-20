@@ -1,0 +1,57 @@
+<script>
+    // 宣告物件
+    let bike = new Object;
+    // 屬性:速度
+    bike.speed = 12;
+    // 屬性:檔位
+    bike.gear = 2;
+    // 方法:加速度
+    bike.upSpeed = function () {
+        // this代表"本物件"
+        this.speed = this.speed * this.gear * 1.2;
+    }
+    // 方法:減速度
+    bike.downSpeed = function () {
+        this.speed = this.speed * 0.7;
+    }
+
+    document.write(bike.speed + "<br>");
+    bike.upSpeed();bike.upSpeed();bike.upSpeed();
+    bike.downSpeed();
+    document.write(bike.speed + "<br>");
+
+    // 物件所擁有的成員，物件及方法
+    let bike2 = {
+        speed: 4,
+        gear: 4,
+        upSpeed: function() {
+            this.speed = this.speed * 1.4;
+        }
+    };
+    document.write(bike2.speed + "<br>");
+    bike2.upSpeed();bike2.upSpeed();bike2.upSpeed();
+    document.write(bike2.speed + "<br>");
+
+    // bike2['upSpeed'](); === bike2.upSpeed();
+    bike2['upSpeed']();
+    document.write(bike2.speed + "<br>");
+
+    let method = 'upSpeed';
+    bike2[method]();
+    document.write(bike2.speed + "<br>");
+
+    for (let key in bike2) {
+        document.write (key + ":" + bike2[key] + "<br>");
+    }
+
+    document.write("<hr>");
+
+    for (let key in window) {
+        document.write (key + ":" + document[key] + "<br>");
+    }
+
+    // ES6建議不要用var,用var之後整個window都會知道
+    var aa = 123;
+    let bb = 456;
+
+</script>
