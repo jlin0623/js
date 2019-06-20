@@ -1,0 +1,22 @@
+<!-- 36 -->
+<script src="620api.js"></script>
+<script>
+    let obj = {
+        name: 'brad',
+        age:18
+    }
+
+    // let obj1 = new Object;
+    let obj1 = obj.constructor();
+    document.write(obj1.name + "<br>");
+    for (let attr in obj) {
+        obj1[attr] = obj[attr];
+    }
+    document.write(obj1.name + "<br>");
+    let oo = {
+        name: 1,
+        age:19
+    }
+    let aa  = clone(oo);
+    document.write(aa.name + "<br>");
+</script>
