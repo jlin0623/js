@@ -1,1 +1,55 @@
 <!-- 33 -->
+<h1 id='head'></h1>
+<hr>
+<canvas id='canvas' width="480" height="320" style="border: 1px solid #000000"></canvas>
+<input type="button" onclick="clearCanvas()" value="Clear">
+<input type="button" onclick="moveBall()" value="移動球">
+<script>
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+
+    function moveBall() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.drawImage(ball, 0, 0);
+    }
+
+    head.innerHTML = 'big company';
+
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'rgb(255,255,255)';
+
+    let bg = new Image();
+    bg.src = "background.jpg";
+    bg.onload = function () {
+        ctx.drawImage(bg, 0, 0);
+    }
+
+    let ball = new Image();
+    ball.src = "ball.png";
+    ball.onload = function () {
+        ctx.drawImage(ball, 240, 240);
+    }
+
+    let isDrag = false;
+
+
+    canvas.onmouseup = function (e) {
+        isDrag = false;
+    };
+
+    canvas.onmousedown = function (e) {
+        isDrag = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+    };
+
+    canvas.onmousemove = function (e) {
+        if (isDrag) {
+            // console.log(e.offsetX + "," + e.offsetY);
+            ctx.lineTo(e.offsetX, e.offsetY)
+            ctx.stroke();
+        }
+    };
+
+</script>
