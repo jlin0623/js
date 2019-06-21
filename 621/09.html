@@ -1,0 +1,57 @@
+<script>
+    class Bike {
+        constructor(...speed) {
+            console.log("new bike");
+            this.speed = 12;
+            this.name = 'giant';
+        }
+        upSpeed() {
+            this.speed *= 1.5;
+        }
+        static m1(){
+            console.log("Bike:m1()")
+        }
+    }
+
+    // 呼叫super
+    class Scooter extends Bike {
+        constructor(speed, gear) {
+            super();
+            console.log("new scooter")
+            this.speed = 15;
+        }
+        setGear(gear) {
+            this.gear = gear;
+        }
+        upSpeed() {
+            this.speed = this.speed * (this.gear + 1.2);
+        }
+    }
+
+    // let b1 = new Bike();
+    // console.log(b1.speed);
+    // console.log(b1.name);
+
+    // let s1 = new Scooter();
+    // console.log(s1.speed);
+    // console.log(s1.name);
+
+    // console.log(b1 instanceof Bike)
+    // console.log(s1 instanceof Bike)
+    // console.log(s1 instanceof Scooter)
+    // console.log(b1 instanceof Scooter)
+
+    class Brad {
+        constructor(...x) {
+            console.log("OK")
+        }
+    }
+
+    // let b = new Brad;
+    // let b1 = new Brad();
+    // let b2 = new Brad(1);
+    // let b3 = new Brad(1, 2);
+    Bike.m1();
+    Scooter.m1();
+
+</script>
