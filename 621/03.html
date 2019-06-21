@@ -1,0 +1,55 @@
+<script src="/js/620/620api.js"></script>
+<script>
+    let bike = {
+        a: 11,
+        b: 22,
+        m1: function() {
+            console.log("bike:m1()" + this.a);
+        }
+    }
+
+    let person = {
+        name: '',
+        mybike: Object.create(bike)
+    }
+
+    let b1 = Object.create(bike);
+    for (let key in b1) {
+        console.log(key)
+    }
+
+    let b2 = bike.constructor(); //new Object
+    let b3 = clone(bike);
+    console.log(b3.a);
+
+    let p1 = clone(person);
+    p1.name = "jackie";
+    p1.mybike.a = 'Giant';
+    console.log(p1.name + p1.mybike);
+    
+    let p2 = clone(p1);
+    p2.name = "jack";
+    p2.mybike.a = 'milima';
+    console.log(p1.name + p1.mybike.a);
+    console.log(p2.name + p2.mybike.a);
+
+    let p3 = Object.assign({}, person);
+    p3.name = 'brad';
+    p3.mybike.a = 'fast';
+    console.log(p3.mybike.a);
+    
+    let p4 = Object.assign({},person);
+    p4.name = 'kevin';
+    p4.mybike.a = 'slow';
+    console.log(p3.mybike.a);
+    console.log(p4.mybike.a);
+    
+    
+    console.log(p1.mybike === p2.mybike);
+    console.log(p3.mybike === p4.mybike);
+
+    p1.mybike.m1();
+    p2.mybike.m1();
+
+
+</script>

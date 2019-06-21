@@ -1,0 +1,18 @@
+<script>
+    // 建構式
+    let f = function () {
+        this.a = 1;
+        this.b = 2;
+    }
+
+    // 產生實體
+    let obj = new f(); //{a:1 ,b:2}
+    console.log(obj.a + ":" + obj.b);
+
+    // 增加屬性
+    f.prototype.b = 3;
+    f.prototype.c = 4;
+
+    console.log(obj.a + ":" + obj.b + ":" + obj.c);
+
+</script>

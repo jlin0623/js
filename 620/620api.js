@@ -1,9 +1,8 @@
-function clone(source) {
-    if (typeof(source) != "object") return null;
-
-    let target = new Object();
-    for (let attr in source) {
-        target[attr] = source[attr];
+function clone(obj) {
+    if (null == obj || "object" != typeof obj) return obj;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
     }
-    return target;
+    return copy;
 }
