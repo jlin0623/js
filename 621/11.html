@@ -1,0 +1,37 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<h1 id="test1">big company</h1>
+<div id="container">
+    <h1> iamh1</h1>
+    <p>p</p>
+    <hr>
+    <h1>h2</h1>
+    <p>2</p>
+</div>
+<input type="button" id="go" value="123456789">
+<script>
+    $('#test1').click(function () {
+        // jq寫法
+        $('#test1').css('color', 'blue').css('background-color', 'gray');
+
+        // 原生JS寫法
+        let ps = $('p');
+        for (let p of ps) {
+            p.style.color = 'blue';
+        }
+
+        $jObj = $(document.getElementById('container'));
+        $jObj.css('background-color', 'pink')
+    });
+
+    let isClickDisable = false;
+    $('#go').click(function () {
+        isClickDisable = !isClickDisable;
+        setInterval(toClickEnable, 3*1000);
+        $(this).attr('disabled', isClickDisable);
+    })
+    function toClickEnable() {
+        isClickDisable = false;
+        $('#go').attr('disabled', isClickDisable)
+    }
+</script>
